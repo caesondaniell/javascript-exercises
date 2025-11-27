@@ -1,20 +1,15 @@
 const palindromes = function (string) {
     const original = string
-    .split(' ')
-    .join('')
-    .split('.')
-    .join('')
-    .split(',')
-    .join('')
-    .split('?')
-    .join('')
-    .split('!')
-    .join('')
-    .split('-')
-    .join('')
-    .split(';')
-    .join('')
-    .split("'")
+    .split('')
+    .filter(item => 
+           !(item.includes(" ") ||
+            item.includes(".") ||
+            item.includes(",") ||
+            item.includes("!") ||
+            item.includes("?") ||
+            item.includes("-") ||
+            item.includes(";") ||
+            item.includes("'")))
     .join('')
     .toLowerCase();
     const reversed = original.split('').reverse().join('');
